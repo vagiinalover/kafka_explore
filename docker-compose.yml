@@ -22,6 +22,8 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     depends_on:
       - zookeeper
+    volumes:
+      - kafka_data:/var/lib/kafka/data
 
 
   postgres_db:
@@ -74,3 +76,4 @@ services:
 volumes:
   postgres_data:
   pgadmin_data:
+  kafka_data:
